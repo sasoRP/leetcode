@@ -1,18 +1,15 @@
-package org.prosas.leetcode.problem288;
+package org.prosas.leetcode.problem228;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.prosas.leetcode.problem125.Solution125;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class Solution288Test {
+class Solution228Test {
 
-    private Solution288 solution = new Solution288();
+    private Solution228 solution = new Solution228();
 
     @Test
     void testSummaryRangesExample1() {
@@ -50,6 +47,32 @@ class Solution288Test {
 
         // verification
         List<String> expected = Arrays.asList("-1");
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void testSummaryRangesExample4() {
+        // setup
+        int[] nums = {-5,-4,-1,0,1,8,9};
+
+        // action
+        List<String> actual = solution.summaryRanges(nums);
+
+        // verification
+        List<String> expected = Arrays.asList("-5->-4","-1->1","8->9");
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void testSummaryRangesExample5() {
+        // setup
+        int[] nums = {};
+
+        // action
+        List<String> actual = solution.summaryRanges(nums);
+
+        // verification
+        List<String> expected = Arrays.asList();
         assertEquals(expected, actual);
     }
 }
